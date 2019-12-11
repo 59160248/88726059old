@@ -3,6 +3,8 @@
     <meta charset = "UTF-8">
 </head>
 <body>
+    Emp List
+    <a href="newemp.html">+</a>
     <?php
       // connect database 
       $db_host = "localhost";

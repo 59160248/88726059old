@@ -4,7 +4,7 @@
 </head>
 <body>
     Emp List
-    <a href="newemp.html">+</a>
+    <a href="link/newemp.html">+</a>
     <?php
       // connect database 
       $db_host = "localhost";

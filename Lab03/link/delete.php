@@ -1,9 +1,4 @@
-<html>
-<head>
-    <meta charset = "UTF-8">
-</head>
-<body>
-    <?php
+<?php
     // connect database 
     $db_host = "localhost";
     $db_user = "s59160248";
@@ -24,7 +19,3 @@
     //echo $stmt->affected_rows . " row inserted, ", "last insert id is $mysqli->insert_id.<br/>";
     
     header("location: ../emplist.php");
-    
-    ?>
-</body>
-</html>

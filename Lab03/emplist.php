@@ -35,6 +35,9 @@
       } else {
           while($row = $result->fetch_object()){ 
                   echo "<div>";
+                  echo "<a href='link/edit.php?empno=$row->emp_no'>edit</a>";
+                  echo ",";
+                  echo "<a href='link/delete.php?empno=$row->emp_no'>delete</a>";
                   echo "$row->emp_no, $row->emp_name, $row->emp_email, $row->emp_password";
                   echo "</div>";
               } 

@@ -13,13 +13,13 @@
     $mysqli = new mysqli($db_host, $db_user, $db_password, $db_name);
     $mysqli->set_charset("utf8");
     
-    $empno = $_GET['empno'];
+    $emp_no = $_GET['emp_no'];
 
     $sql = "DELETE 
             FROM emp 
             WHERE emp_no = ?";
     $stmt = $mysqli->prepare($sql);
-    $stmt->bind_param("s", $empno);
+    $stmt->bind_param("s", $emp_no);
     $stmt->execute();
     //echo $stmt->affected_rows . " row inserted, ", "last insert id is $mysqli->insert_id.<br/>";
     

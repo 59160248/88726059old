@@ -1,22 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <style>
+        h1{
+            text-align: center;
+        }
+    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>new emp</title>
 </head>
 <body>
-    New Emp
+    <h1>New Emp</h1>
+    <p>กรุณาใส่รายละเอียดต่อไปนี้ให้ครบถ้วน</p>
     <form action="save.php" method="post">
-        Your no : <input type="text" name="emp_no" maxlength="5">
-        <br />
-        Your name : <input type="text" name="emp_name" maxlength="50">
-        <br />
-        Your email : <input type="text" name="emp_email" maxlength="50">
-        <br />
-        Password : <input type="password" name="emp_password">
-        <br />
+        รหัสพนักงานของคุณ : <input type="text" name="emp_no" maxlength="5">
+        <br/>
+         ชื่อของคุณ : <select name="emp_prefix">
+        <option value="นาย">นาย</option>
+        <option value="นาง">นาง</option>
+        <option value="นางสาว">นางสาว</option>
+        </select>
+         <input type="text" name="emp_name" maxlength="50">
+        <br/>
+        เพศ : <input type="radio" name="emp_gender" value="M" checked> ชาย
+              <input type="radio" name="emp_gender" value="F" > หญิง
+        <br/>
+        วัน/เดือน/ปี เกิด : <input type="date" name="emp_birthdate">
+        <br/>
+        emailของคุณ : <input type="text" name="emp_email" maxlength="50">
+        <br/>
+        Passwordของคุณ : <input type="password" name="emp_password">
+        <br/>
+        เงินเดือน : <input type="int" name="emp_salay" maxlength="7">
+        <br/>
         <p>
             <input type="submit" value="Submit">
         </p>

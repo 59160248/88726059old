@@ -15,10 +15,10 @@
         }
         table#t01 {
             width: 100%;    
-            background-color: #ccf5ff;
+            background-color: #ccf2ff;
         }
         table#t01 th {
-            background-color: black;
+            background-color: #00bfff;
             color: white;
         }
     </style>
@@ -29,16 +29,16 @@
 </head>
 <body>
     <h1>Emp List</h1>
-    <br>
+    <br/>
     <button><a href="link/newemp.html">New Emp+</a></button>
-    <br>
+    <br/>
     <table id="t01">
         <tr>
-        <th>รหัส</th>
+        <th>รหัสพนักงาน</th>
         <th>ชื่อ</th>
         <th>เพศ</th>
         <th>email</th>
-        <th>ว/ด/ป เกิด</th>
+        <th>วัน/เดือน/ปี เกิด</th>
         <th>เงินเดือน</th>
         <th>ดำเนินการ</th>
         </tr>
@@ -76,7 +76,14 @@
                   echo "<tr>";
                   echo "<td>$row->emp_no</td>";
                   echo "<td>$row->emp_prefix $row->emp_name </td>";
-                  echo "<td>$row->emp_gender</td>";
+                  echo "<td>";
+                  if($row->emp_gender == 'M'){
+                    echo "ชาย";   
+                  }
+                  else{
+                    echo "หญิง";
+                  }
+                  echo "</td>";
                   echo "<td>$row->emp_email</td>";
                   echo "<td>$row->dmy</td>";
                   echo "<td>$row->emp_salay</td>";

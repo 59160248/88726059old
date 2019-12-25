@@ -23,7 +23,7 @@
     $emp_salay = $_POST{'emp_salay'};
     $sql = "INSERT 
     INTO emp (emp_no, emp_name, emp_email, emp_password, emp_prefix, emp_gender, emp_birthdate, emp_salay) 
-    VALUES (?, ?,?, ?, ?, ?,?, ?)";
+    VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
     $stmt = $mysqli->prepare($sql);
     $stmt->bind_param("ssssssss", $emp_no, $emp_name, $emp_email, $emp_password,  $emp_prefix, $emp_gender, $emp_birthdate, $emp_salay);
     $stmt->execute();  

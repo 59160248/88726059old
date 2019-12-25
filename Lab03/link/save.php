@@ -26,7 +26,7 @@
     $stmt->execute();
     //echo $stmt->affected_rows . " row inserted, ", "last insert id is $mysqli->insert_id.<br/>";
     
-    header("location: emplist.php");
+    header("location: ../emplist.php");
     
     ?>
 </body>

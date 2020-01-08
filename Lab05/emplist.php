@@ -1,13 +1,17 @@
 <html>
 <head>
-    <meta charset = "UTF-8">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Emp List</title>
     <style>
         h1 {
             text-align: center;
-        }
-        table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
         }
         th, td {
             padding: 15px;
@@ -20,28 +24,36 @@
         table#t01 th {
             background-color: #00bfff;
             color: white;
+            text-align: center;
         }
+
     </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Emp List</title>
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="emplist.php">Emp list</a>
+  
+     <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link 3</a>
+        </li>
+    </ul>
+    </nav>
+    <br>
     <h1>Emp List</h1>
-    <br/>
-    <button><a href="link/newemp.html">New Emp+</a></button>
-    <br/>
-    <table id="t01">
-        <tr>
-        <th>รหัสพนักงาน</th>
-        <th>ชื่อ</th>
-        <th>เพศ</th>
-        <th>email</th>
-        <th>วัน/เดือน/ปี เกิด</th>
-        <th>เงินเดือน</th>
-        <th>ดำเนินการ</th>
-        </tr>
+    <br>
+    <div class="container">
+    <button style="font-size:20px"><a href="link/newemp.html"> New Emp <i class="material-icons">library_add</i> </a></button>
+    <br>
+   
     <?php
       // connect database 
       $db_host = "localhost";
@@ -70,9 +82,21 @@
       if (!result) {
               echo ("Error: ". $mysqli->error);
       } else {
-                  
+                  echo"<br>";
+                  echo"<table class='table table-hover table-bordered' id='t01'>";
+                  echo"<thead>";
+                  echo"<tr>";
+                  echo"<th>รหัสพนักงาน</th>";
+                  echo"<th>ชื่อ</th>";
+                  echo"<th>เพศ</th>";
+                  echo"<th>email</th>";
+                  echo"<th>วัน/เดือน/ปี เกิด</th>";
+                  echo"<th>เงินเดือน</th>";
+                  echo"<th>ดำเนินการ</th>";
+                  echo"</thead>";
           while($row = $result->fetch_object()){
                   echo "<div>";
+                  echo"</tr>";
                   echo "<tr>";
                   echo "<td>$row->emp_no</td>";
                   echo "<td>$row->emp_prefix $row->emp_name </td>";
@@ -88,16 +112,17 @@
                   echo "<td>$row->dmy</td>";
                   echo "<td>$row->emp_salay</td>";
                   echo "<td>";
-                  echo "<a href='link/edit.php?emp_no=$row->emp_no'>[edit]</a>";
+                  echo "<a href='link/edit.php?emp_no=$row->emp_no'>[<i class='material-icons' style='font-size:20px'>edit</i>]</a>";
                   echo " , ";
-                  echo "<a href='link/delete.php?emp_no=$row->emp_no'>[delete]</a>";
+                  echo "<a href='link/delete.php?emp_no=$row->emp_no'>[<i class='material-icons' style='font-size:20px'>delete_forever</i>]</a>";
                   echo "</td>";
                   echo "</tr>";
-                  echo "</div>";      
+                  echo "</div>"; 
+                  
               } 
-             
+                  echo "</table>";
       }
       ?> 
-    </table>
+    </div>
 </body>
 </html>

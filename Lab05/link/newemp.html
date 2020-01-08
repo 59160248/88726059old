@@ -1,43 +1,101 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <style>
-        h1{
-            text-align: center;
-        }
-    </style>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>new emp</title>
+    <title>New Emp</title>
+    <style>
+        h1 {
+            text-align: center;
+        }
+        th, td {
+            padding: 15px;
+            text-align: center;
+        }
+        table#t01 {
+            width: 100%;    
+            background-color: #ccf2ff;
+        }
+        table#t01 th {
+            background-color: #00bfff;
+            color: white;
+            text-align: center;
+        }
+
+    </style>
 </head>
 <body>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+    <!-- Brand/logo -->
+    <a class="navbar-brand" href="../emplist.php">Emp list</a>
+  
+     <!-- Links -->
+    <ul class="navbar-nav">
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link 1</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link 2</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Link 3</a>
+        </li>
+    </ul>
+    </nav>
+    <br>
     <h1>New Emp</h1>
+    <div class="container">
     <p>กรุณาใส่รายละเอียดต่อไปนี้ให้ครบถ้วน</p>
     <form action="save.php" method="post">
-        รหัสพนักงานของคุณ : <input type="text" name="emp_no" maxlength="5">
-        <br/>
-         ชื่อของคุณ : <select name="emp_prefix">
-        <option value="นาย">นาย</option>
-        <option value="นาง">นาง</option>
-        <option value="นางสาว">นางสาว</option>
-        </select>
-         <input type="text" name="emp_name" maxlength="50">
-        <br/>
-        เพศ : <input type="radio" name="emp_gender" value="M" checked> ชาย
-              <input type="radio" name="emp_gender" value="F" > หญิง
-        <br/>
+            <div class="form-group">
+                    <label for="emp_no"> รหัสพนักงานของคุณ :</label>
+                    <input type="text" class="form-control" placeholder="ใส่รหัสพนักงานของคุณ " id="emp_no" name="emp_no" maxlength="5">
+            </div>
+        <br>
+            <div class="form-group">
+                <label for="emp_name">ชื่อของคุณ :</label> 
+                <select name="emp_prefix"> 
+                <option value="นาย">นาย</option>
+                <option value="นาง">นาง</option>
+                <option value="นางสาว">นางสาว</option>
+                </select>
+                <input type="text" class="form-control" placeholder="ใส่ชื่อของคุณ " id="emp_name" name="emp_name" maxlength="50">
+            </div>
+        <br>     
+                <label for="emp_gender">เพศ :</label>
+                <input type="radio" id="emp_gender" name="emp_gender" value="M" checked> ชาย
+                <input type="radio" id="emp_gender" name="emp_gender" value="F" > หญิง
+        <br>
+        <br>
         วัน/เดือน/ปี เกิด : <input type="date" name="emp_birthdate">
-        <br/>
-        emailของคุณ : <input type="text" name="emp_email" maxlength="50">
-        <br/>
-        Passwordของคุณ : <input type="password" name="emp_password">
-        <br/>
-        เงินเดือน : <input type="int" name="emp_salay" maxlength="7">
-        <br/>
+        <br>
+        <br>
+            <div class="form-group">
+                <label for="emp_email">emailของคุณ :</label>
+                <input type="text" class="form-control" placeholder="ใส่emailของคุณ" id="emp_email" name="emp_email" maxlength="50">
+            </div>
+        
+        <br>
+            <div class="form-group">
+                <label for="emp_password"> Passwordของคุณ :</label>
+                <input type="password" class="form-control" placeholder="ใส่Passwordของคุณ" id="emp_password" name="emp_password">
+            </div>
+        <br>
+            <div class="form-group">
+                <label for="emp_salay">เงินเดือน :</label>
+                <input type="int" class="form-control" placeholder="ใส่เงินเดือนของคุณ" id="emp_salay" name="emp_salay" maxlength="7">
+            </div>
+        <br>
+        <br>
         <p>
             <input type="submit" value="Submit">
         </p>
     </form>
+</div>
 </body>
 </html>

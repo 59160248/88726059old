@@ -3,7 +3,7 @@ https://angsila.informatics.buu.ac.th/~59160248/88726059/
 <Br>
 <Br>winSCP
 <Br>angsila.informatics.buu.ac.th 
-<Br>59160248 Kasemsak456*
+<Br>59160248 456Kasemsak*
 <Br>start
 <Br>run cmd
 <Br>git clone https://github.com/59160248/88726059.git
